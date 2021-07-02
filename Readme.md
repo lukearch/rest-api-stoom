@@ -9,12 +9,14 @@
 - [Spring Boot][spring]
 - [Docker][docker]
 - [h2 Database][h2]
+- [Google Geocoding API][geocoding]
 
 [java]: https://www.java.com/pt-BR/
 [maven]: https://maven.apache.org/
 [spring]: https://spring.io/
 [docker]: https://www.docker.com/
 [h2]: https://www.h2database.com/html/main.html
+[geocoding]: https://developers.google.com/maps/documentation/geocoding/overview
 
 ## 💿 Como executar o projeto
 
