@@ -26,7 +26,7 @@ Caso prefira utilizar a segunda opção, pule para o item 2.
 
 💡 A versão do Java nativa para esse projeto é a **[Java SE JDK 11][java se 11]**, sendo necessária a instalação prévia da mesma para executar o servidor através do maven no método 1. 
 
-💡 A imagem docker cria um ambiente com a versão correta do Java instalado, não sendo necessária a instalação da mesma para execução do projeto no método 2.
+💡 A imagem docker cria um ambiente com a versão correta do Java instalado, porém ainda assim é necessária a instalação da JVM para compilar o pacote do projeto.
 
 ```bash
 
