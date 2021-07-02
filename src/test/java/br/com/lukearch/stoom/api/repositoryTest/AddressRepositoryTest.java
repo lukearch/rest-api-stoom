@@ -41,7 +41,7 @@ public class AddressRepositoryTest {
     address.setZipcode(13084780L);
     address.setCountry("Brasil");
 
-    // Salva a entidade Endereço e no banco de dados 
+    // Salva a entidade Endereço e no banco de dados
     addressRepository.save(address);
 
     // Verifica se o ID foi gerado corretamente
@@ -72,9 +72,10 @@ public class AddressRepositoryTest {
     Optional<Address> address = addressRepository.findById(1L);
 
     // Verifica se o endereço foi encontrado corretamente
-    if(address.isPresent()) {
+    if (address.isPresent()) {
 
-      // Altera a entidade Endereço e em sua propriedade country com o valor "United Kingdom"
+      // Altera a entidade Endereço e em sua propriedade country com o valor "United
+      // Kingdom"
       address.get().setCountry("United Kingdom");
     }
 
@@ -96,7 +97,7 @@ public class AddressRepositoryTest {
     Optional<Address> address = addressRepository.findById(1L);
 
     // Verifica se o endereço foi encontrado corretamente
-    if(address.isPresent()) {
+    if (address.isPresent()) {
 
       // Pede para o repositorio remover a entidade endereço do banco de dados
       addressRepository.delete(address.get());
