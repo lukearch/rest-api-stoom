@@ -4,12 +4,14 @@
 
 ## ⚙️ Ferramentas utilizadas
 
-- [Java][java]
-- [Apache Maven][maven]
-- [Spring Boot][spring]
-- [Docker][docker]
-- [h2 Database][h2]
-- [Google Geocoding API][geocoding]
+💡 Foi utilizado um banco de dados em memória, o **[h2 Database][h2]** para fins de teste da aplicação, caso planejado utilizar algun banco externo, será necessária a adição da dependência do Driver do banco de dados no arquivo **[pom.xml][pom]** do projeto, e posteriormente, a configuração do arquivo **[application.yml][config]**.
+
+- **[Java][java]**
+- **[Apache Maven][maven]**
+- **[Spring Boot][spring]**
+- **[Docker][docker]**
+- **[h2 Database][h2]**
+- **[Google Geocoding API][geocoding]**
 
 [java]: https://www.java.com/pt-BR/
 [maven]: https://maven.apache.org/
@@ -17,6 +19,8 @@
 [docker]: https://www.docker.com/
 [h2]: https://www.h2database.com/html/main.html
 [geocoding]: https://developers.google.com/maps/documentation/geocoding/overview
+[pom]: ./pom.xml
+[config]: ./main/resources/application.yml
 
 ## 💿 Como executar o projeto
 
