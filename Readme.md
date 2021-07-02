@@ -24,16 +24,16 @@ No exemplo abaixo, seguem os campos mapeados pela classe **[Address.java][addres
 ```JSON
 
   {
-    "streetName": "",               Campo Obrigatório
-    "number": "",                   Campo Obrigatório
-    "complement": "",               Campo Obrigatório
-    "neighbourhood": "",            Campo Obrigatório
-    "city": "",                     Campo Obrigatório
-    "state": "",                    Campo Obrigatório
-    "country": "",                  Campo Obrigatório
-    "zipcode": "",                  Campo Obrigatório
-    "latitude": "",                    Campo Opcional
-    "longitude": ""                    Campo Opcional
+    "streetName": "",         //  Campo Obrigatório
+    "number": "",             //  Campo Obrigatório
+    "complement": "",         //  Campo Obrigatório
+    "neighbourhood": "",      //  Campo Obrigatório
+    "city": "",               //  Campo Obrigatório
+    "state": "",              //  Campo Obrigatório
+    "country": "",            //  Campo Obrigatório
+    "zipcode": "",            //  Campo Obrigatório
+    "latitude": "",           //     Campo Opcional
+    "longitude": ""           //     Campo Opcional
   }
 
 ```

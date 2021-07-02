@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.api.ControllerTest;
+package br.com.lukearch.stoom.api.controllerTest;
 
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
