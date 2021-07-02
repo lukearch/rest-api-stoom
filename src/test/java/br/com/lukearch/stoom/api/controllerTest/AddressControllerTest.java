@@ -3,7 +3,6 @@ package br.com.lukearch.stoom.api.controllerTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
 
 import br.com.lukearch.stoom.api.model.Address;
 import br.com.lukearch.stoom.api.service.GeocodeService;

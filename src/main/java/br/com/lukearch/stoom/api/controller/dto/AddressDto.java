@@ -32,89 +32,50 @@ public class AddressDto {
     this.longitude = address.getLongitude();
   }
   
-  /** 
-   * @return Long
-   */
   public Long getId() {
     return id;
   }
   
-  /** 
-   * @return String
-   */
   public String getStreetName() {
     return streetName;
   }
   
-  /** 
-   * @return Long
-   */
   public Long getNumber() {
     return number;
   }
   
-  /** 
-   * @return String
-   */
   public String getComplement() {
     return complement;
   }
   
-  /** 
-   * @return String
-   */
   public String getNeighbourhood() {
     return neighbourhood;
   }
-  
-  /** 
-   * @return String
-   */
+ 
   public String getCity() {
     return city;
   }
-  
-  /** 
-   * @return String
-   */
+ 
   public String getState() {
     return state;
   }
-  
-  /** 
-   * @return String
-   */
+ 
   public String getCountry() {
     return country;
   }
-  
-  /** 
-   * @return Long
-   */
+
   public Long getZipcode() {
     return zipcode;
   }
   
-  /** 
-   * @return Double
-   */
   public String getLatitude() {
     return latitude;
   }
-  
-  /** 
-   * @return Double
-   */
+
   public String getLongitude() {
     return longitude;
   }
 
-  
-  
-  /** 
-   * @param lAddress
-   * @return List<AddressDto>
-   */
   public static List<AddressDto> convert(List<Address> lAddress) {
     return lAddress.stream().map(AddressDto::new).collect(Collectors.toList());
   }
