@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.restapi.controller;
+package br.com.lukearch.stoom.api.controller;
 
 import java.net.URI;
 import java.util.List;
@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.lukearch.stoom.restapi.controller.dto.EnderecoDto;
-import br.com.lukearch.stoom.restapi.controller.form.EnderecoForm;
-import br.com.lukearch.stoom.restapi.model.Endereco;
-import br.com.lukearch.stoom.restapi.repository.EnderecoRepository;
-import br.com.lukearch.stoom.restapi.service.GeocodeService;
+import br.com.lukearch.stoom.api.controller.dto.EnderecoDto;
+import br.com.lukearch.stoom.api.controller.form.EnderecoForm;
+import br.com.lukearch.stoom.api.model.Endereco;
+import br.com.lukearch.stoom.api.repository.EnderecoRepository;
+import br.com.lukearch.stoom.api.service.GeocodeService;
 
 @RestController
 @RequestMapping("enderecos")

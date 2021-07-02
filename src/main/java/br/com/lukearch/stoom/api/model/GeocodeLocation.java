@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.restapi.model;
+package br.com.lukearch.stoom.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

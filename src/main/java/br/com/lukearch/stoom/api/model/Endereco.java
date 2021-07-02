@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.restapi.model;
+package br.com.lukearch.stoom.api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

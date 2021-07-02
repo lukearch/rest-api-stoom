@@ -1,11 +1,11 @@
-package br.com.lukearch.stoom.restapi.controller.form;
+package br.com.lukearch.stoom.api.controller.form;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import br.com.lukearch.stoom.restapi.model.Endereco;
-import br.com.lukearch.stoom.restapi.model.GeocodeResult;
-import br.com.lukearch.stoom.restapi.service.GeocodeService;
+import br.com.lukearch.stoom.api.model.Endereco;
+import br.com.lukearch.stoom.api.model.GeocodeResult;
+import br.com.lukearch.stoom.api.service.GeocodeService;
 
 public class EnderecoForm {
   @NotBlank

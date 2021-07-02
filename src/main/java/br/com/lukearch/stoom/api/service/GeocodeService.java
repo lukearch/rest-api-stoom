@@ -1,9 +1,9 @@
-package br.com.lukearch.stoom.restapi.service;
+package br.com.lukearch.stoom.api.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.lukearch.stoom.restapi.model.GeocodeResult;
+import br.com.lukearch.stoom.api.model.GeocodeResult;
 
 @Service
 public class GeocodeService {

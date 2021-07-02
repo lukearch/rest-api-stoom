@@ -1,9 +1,9 @@
-package br.com.lukearch.stoom.restapi.controller.dto;
+package br.com.lukearch.stoom.api.controller.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.lukearch.stoom.restapi.model.Endereco;
+import br.com.lukearch.stoom.api.model.Endereco;
 
 public class EnderecoDto {
   private Long id;

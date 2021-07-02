@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.restapi.config;
+package br.com.lukearch.stoom.api.config;
 
 import java.util.ArrayList;
 import java.util.List;
