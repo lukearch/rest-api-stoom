@@ -3,11 +3,11 @@ package br.com.lukearch.stoom.api.controller.form;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import br.com.lukearch.stoom.api.model.Endereco;
+import br.com.lukearch.stoom.api.model.Address;
 import br.com.lukearch.stoom.api.model.GeocodeResult;
 import br.com.lukearch.stoom.api.service.GeocodeService;
 
-public class EnderecoForm {
+public class AddressForm {
   @NotBlank
   private String streetName;
   @NotNull
@@ -179,52 +179,52 @@ public class EnderecoForm {
 
   
   /** 
-   * @return Endereco
+   * @return Address
    */
-  public Endereco convert(GeocodeService gService) {
-    Endereco e = new Endereco();
-    e.setStreetName(streetName);
-    e.setNumber(number);
-    e.setComplement(complement);
-    e.setNeighbourhood(neighbourhood);
-    e.setCity(city);
-    e.setState(state);
-    e.setCountry(country);
-    e.setZipcode(zipcode);
-    e.setLatitude(latitude);
-    e.setLongitude(longitude);
-    GeocodeResult result = gService.result(e.toString());
+  public Address convert(GeocodeService gService) {
+    Address address = new Address();
+    address.setStreetName(streetName);
+    address.setNumber(number);
+    address.setComplement(complement);
+    address.setNeighbourhood(neighbourhood);
+    address.setCity(city);
+    address.setState(state);
+    address.setCountry(country);
+    address.setZipcode(zipcode);
+    address.setLatitude(latitude);
+    address.setLongitude(longitude);
+    GeocodeResult result = gService.result(address.toString());
     if(latitude == "") {
-      e.setLatitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLatitude());
+      address.setLatitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLatitude());
     }
     if(longitude == "") {
-      e.setLongitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLongitude());
+      address.setLongitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLongitude());
     }
-    return e;
+    return address;
   }
 
   
   /** 
-   * @param endereco
-   * @return Endereco
+   * @param address
+   * @return Address
    */
-  public Endereco update(Endereco endereco, GeocodeService gService) {
-    Endereco e = endereco;
-    e.setStreetName(streetName);
-    e.setNumber(number);
-    e.setComplement(complement);
-    e.setNeighbourhood(neighbourhood);
-    e.setCity(city);
-    e.setState(state);
-    e.setCountry(country);
-    e.setZipcode(zipcode);
-    GeocodeResult result = gService.result(e.toString());
-    if(latitude == "" | e.getLatitude().equals(latitude)) {
-      e.setLatitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLatitude());
+  public Address update(Address pAddress, GeocodeService gService) {
+    Address address = pAddress;
+    address.setStreetName(streetName);
+    address.setNumber(number);
+    address.setComplement(complement);
+    address.setNeighbourhood(neighbourhood);
+    address.setCity(city);
+    address.setState(state);
+    address.setCountry(country);
+    address.setZipcode(zipcode);
+    GeocodeResult result = gService.result(address.toString());
+    if(latitude == "" | address.getLatitude().equals(latitude)) {
+      address.setLatitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLatitude());
     }
-    if(longitude == "" | e.getLongitude().equals(longitude)) {
-      e.setLongitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLongitude());
+    if(longitude == "" | address.getLongitude().equals(longitude)) {
+      address.setLongitude(result.getResults().get(0).getGeometry().getGeocodeLocation().getLongitude());
     }
-    return e;
+    return address;
   }
 }

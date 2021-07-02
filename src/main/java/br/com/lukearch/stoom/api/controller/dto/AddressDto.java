@@ -3,9 +3,9 @@ package br.com.lukearch.stoom.api.controller.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.lukearch.stoom.api.model.Endereco;
+import br.com.lukearch.stoom.api.model.Address;
 
-public class EnderecoDto {
+public class AddressDto {
   private Long id;
   private String streetName;
   private Long number;
@@ -18,18 +18,18 @@ public class EnderecoDto {
   private String latitude;
   private String longitude;
 
-  public EnderecoDto(Endereco e) {
-    this.id = e.getId();
-    this.streetName = e.getStreetName();
-    this.number = e.getNumber();
-    this.complement = e.getComplement();
-    this.neighbourhood = e.getNeighbourhood();
-    this.city = e.getCity();
-    this.state = e.getState();
-    this.country = e.getCountry();
-    this.zipcode = e.getZipcode();
-    this.latitude = e.getLatitude();
-    this.longitude = e.getLongitude();
+  public AddressDto(Address address) {
+    this.id = address.getId();
+    this.streetName = address.getStreetName();
+    this.number = address.getNumber();
+    this.complement = address.getComplement();
+    this.neighbourhood = address.getNeighbourhood();
+    this.city = address.getCity();
+    this.state = address.getState();
+    this.country = address.getCountry();
+    this.zipcode = address.getZipcode();
+    this.latitude = address.getLatitude();
+    this.longitude = address.getLongitude();
   }
   
   /** 
@@ -112,10 +112,10 @@ public class EnderecoDto {
   
   
   /** 
-   * @param lEnderecos
-   * @return List<EnderecoDto>
+   * @param lAddress
+   * @return List<AddressDto>
    */
-  public static List<EnderecoDto> convert(List<Endereco> lEnderecos) {
-    return lEnderecos.stream().map(EnderecoDto::new).collect(Collectors.toList());
+  public static List<AddressDto> convert(List<Address> lAddress) {
+    return lAddress.stream().map(AddressDto::new).collect(Collectors.toList());
   }
 }
