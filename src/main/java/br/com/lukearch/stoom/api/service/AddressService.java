@@ -3,6 +3,8 @@ package br.com.lukearch.stoom.api.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import br.com.lukearch.stoom.api.model.Address;
 import br.com.lukearch.stoom.api.repository.AddressRepository;
 
 @Service
+@Transactional
 public class AddressService {
 
   @Autowired
@@ -39,10 +42,11 @@ public class AddressService {
     return address;
   }
 
-  public AddressDto updateAddress(Long id) {
+  public AddressDto updateAddress(Long id, AddressForm addressForm) {
     Optional<Address> address = addressRepository.findById(id);
     if(address.isPresent()) {
-      return new AddressDto(address.get());
+      addressForm.update(address.get(), gService);
+      return new  AddressDto(address.get());
     }
     return null;
   }

@@ -13,11 +13,6 @@ import br.com.lukearch.stoom.api.model.GeocodeResult;
 
 @Service
 public class GeocodeService {
-  
-  /** 
-   * @param location
-   * @return GeocodeResult
-   */
   public GeocodeResult result(String location) {
     String api = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=AIzaSyCj0cY2yEvVfYhAaTz3-P2MW-YRKmhz5Uw";
     RestTemplate template = new RestTemplate();

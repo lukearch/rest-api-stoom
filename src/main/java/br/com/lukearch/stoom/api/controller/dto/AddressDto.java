@@ -31,7 +31,7 @@ public class AddressDto {
     this.latitude = address.getLatitude();
     this.longitude = address.getLongitude();
   }
-  
+
   public Long getId() {
     return id;
   }
