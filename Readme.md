@@ -63,7 +63,38 @@ $ docker run -p 8080:8080 lukearch/rest-api-stoom
 
 ```
 
-Feito por Lucas Larangeira 👋🏽
+### 🎲 **URLs Mapeadas**
+
+💡 Requisição **[GET]** retorna todas as entidades Endereço cadastradas no banco de dados.
+
+💡 Requisição **[POST]** cadastra uma nova entidade Endereço no banco de dados.
+
+💡 Requisição **[PUT]** modifica uma entidade Endereço já cadastrada no banco de dados, substitua a expressão {id} pelo ID verdadeiro da entidade.
+
+💡 Requisição **[DELETE]** remove uma entidade Endereço do banco de dados, substitua a expressão {id} pelo ID verdadeiro da entidade.
+
+**[GET]** http://localhost:8080/enderecos
+
+
+**[POST]** http://localhost:8080/enderecos
+
+
+**[PUT]** http://localhost:8080/enderecos/{id}
+
+
+**[DELETE]** http://localhost:8080/enderecos/{id}
+
+### 🎲 **Dinâmica de Testes**
+
+📝 Os testes unitários estão presentes em **[src/test][test]**.
+
+
+
+
+
+
+
+
 
 
 [java]: https://www.java.com/pt-BR/
@@ -75,5 +106,6 @@ Feito por Lucas Larangeira 👋🏽
 [h2]: https://www.h2database.com/html/main.html
 [geocoding]: https://developers.google.com/maps/documentation/geocoding/overview
 [pom]: ./pom.xml
+[test]: ./src/test/java/br/com/lukearch/stoom/api
 [config]: ./src/main/resources/application.yml
 [java se 11]: https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html

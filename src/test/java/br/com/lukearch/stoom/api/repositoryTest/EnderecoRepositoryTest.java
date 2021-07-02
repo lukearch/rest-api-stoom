@@ -1,4 +1,4 @@
-package br.com.lukearch.stoom.api.dataJpaTest;
+package br.com.lukearch.stoom.api.repositoryTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
