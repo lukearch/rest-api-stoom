@@ -17,23 +17,16 @@
 - **[h2 Database][h2]**
 - **[Google Geocoding API][geocoding]**
 
-[java]: https://www.java.com/pt-BR/
-[maven]: https://maven.apache.org/
-[spring]: https://spring.io/
-[thymeleaf]: https://www.thymeleaf.org/
-[vue]: https://vuejs.org/
-[docker]: https://www.docker.com/
-[h2]: https://www.h2database.com/html/main.html
-[geocoding]: https://developers.google.com/maps/documentation/geocoding/overview
-[pom]: ./pom.xml
-[config]: ./src/main/resources/application.yml
-
 ## 💿 Como executar o projeto
 
 ### 🎲 **Backend [servidor]**
 
 💡 Existem duas formas de rodar a aplicação, a primeira delas é executando através da sua própria JVM, enquanto a segunda opção é rodar utilizando um container docker.
 Caso prefira utilizar a segunda opção, pule para o item 2.
+
+💡 A versão do Java nativa para esse projeto é a **[Java SE JDK 11][java se 11]**, sendo necessária a instalação prévia da mesma para executar o servidor através do maven no método 1. 
+
+💡 A imagem docker cria um ambiente com a versão correta do Java instalado, não sendo necessária a instalação da mesma para execução do projeto no método 2.
 
 ```bash
 
@@ -71,3 +64,16 @@ $ docker run -p 8080:8080 lukearch/rest-api-stoom
 ```
 
 Feito por Lucas Larangeira 👋🏽
+
+
+[java]: https://www.java.com/pt-BR/
+[maven]: https://maven.apache.org/
+[spring]: https://spring.io/
+[thymeleaf]: https://www.thymeleaf.org/
+[vue]: https://vuejs.org/
+[docker]: https://www.docker.com/
+[h2]: https://www.h2database.com/html/main.html
+[geocoding]: https://developers.google.com/maps/documentation/geocoding/overview
+[pom]: ./pom.xml
+[config]: ./src/main/resources/application.yml
+[java se 11]: https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html
