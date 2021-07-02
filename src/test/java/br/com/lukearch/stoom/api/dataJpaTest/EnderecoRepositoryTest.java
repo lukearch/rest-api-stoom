@@ -1,5 +1,15 @@
 package br.com.lukearch.stoom.api.dataJpaTest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -9,22 +19,16 @@ import org.springframework.test.annotation.Rollback;
 import br.com.lukearch.stoom.api.model.Endereco;
 import br.com.lukearch.stoom.api.repository.EnderecoRepository;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.junit.jupiter.api.Test;
-
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EnderecoRepositoryTest {
   @Autowired
   private EnderecoRepository eRepository;
 
   @Test
   @Rollback(false)
+  @Order(1)
   public void testSaveNewEndereco() {
     // Instancia uma nova entidade endereço
     Endereco e = new Endereco();
@@ -45,6 +49,7 @@ public class EnderecoRepositoryTest {
   }
 
   @Test
+  @Order(2)
   public void testReadEndereco() {
     // Salva um novo endereço no banco de dados
     testSaveNewEndereco();
@@ -58,6 +63,7 @@ public class EnderecoRepositoryTest {
 
   @Test
   @Transactional
+  @Order(3)
   public void testUpdateEndereco() {
     // Salva um novo endereço no banco de dados
     testSaveNewEndereco();
@@ -81,6 +87,7 @@ public class EnderecoRepositoryTest {
 
   @Test
   @Transactional
+  @Order(4)
   public void testDeleteEndereco() {
     // Salva um novo endereço no banco de dados
     testSaveNewEndereco();

@@ -32,41 +32,41 @@
 
 ### 🎲 **Backend [servidor]**
 
+💡 Existem duas formas de rodar a aplicação, a primeira delas é executando através da sua própria JVM, enquanto a segunda opção é rodar utilizando um container docker.
+Caso prefira utilizar a segunda opção, pule para o item 2.
+
 ```bash
 
-# 💡 Existem duas formas de rodar a aplicação,
-# A primeira delas é executando através da sua própria JVM,
-# Enquanto a segunda opção é rodar utilizando um container docker.
-# Caso prefira utilizar a segunda opção, pule para o item 2.
+# 📌 Método 1
 
-# ======================================================
-
-# 📌 1 - Acesse a pasta do projeto
+# Navegue até a pasta do projeto
 $ cd rest-api-stoom
 
-# 1.1 - Instale todas as dependências maven
+# Instale todas as dependências maven
 $ ./mvnw install
 
-# 1.2 - Inicie a aplicação
+# Inicie a aplicação
 $ ./mvnw spring-boot:run
 
-# ======================================================
+# Entre em > http://localhost:8080 <
 
-# 📌 2 - Acesse a pasta do projeto
+```
+```bash
+# 📌 Método 2
+
+# Navegue até a pasta do projeto
 $ cd rest-api-stomm
 
-# 2.1 - Enpacote o projeto
+# Enpacote o projeto
 $ ./mvnw package
 
-# 2.2 - Construa uma imagem docker
+# Construa uma imagem docker
 $ docker build -t lukearch/rest-api-stoom .
 
-# 2.3 - Execute a imagem
+# Execute a imagem
 $ docker run -p 8080:8080 lukearch/rest-api-stoom
 
-# ======================================================
-
-# 📌 3 - Entre em > http://localhost:8080 <
+# Entre em > http://localhost:8080 <
 
 ```
 
