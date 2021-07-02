@@ -3,7 +3,6 @@ package br.com.lukearch.stoom.api.controller;
 import java.net.URI;
 import java.util.List;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +44,6 @@ public class AddressController {
   }
 
   @PostMapping
-  @Transactional
   public ResponseEntity<AddressDto> save(@RequestBody @Valid AddressForm addressForm, UriComponentsBuilder builder, BindingResult result) {
     if(result.hasErrors()) {
     }
@@ -55,9 +53,8 @@ public class AddressController {
   }
   
   @PutMapping("/{id}")
-  @Transactional
   public ResponseEntity<AddressDto> update(@PathVariable Long id, @RequestBody @Valid AddressForm addressForm) {
-    AddressDto address = addressService.updateAddress(id);
+    AddressDto address = addressService.updateAddress(id, addressForm);
     if(address != null) {
       return ResponseEntity.ok(address);
     }
@@ -65,7 +62,6 @@ public class AddressController {
   }
   
   @DeleteMapping("/{id}")
-  @Transactional
   public ResponseEntity<?> delete(@PathVariable Long id) {
     if(addressService.canDeleteAddress(id)) {
       return ResponseEntity.ok().build();
