@@ -7,17 +7,11 @@ public class FormErrorDto {
     this.field = field;
     this.errorMessage = errorMessage;
   }
-  
-  /** 
-   * @return String
-   */
+
   public String getField() {
     return field;
   }
-  
-  /** 
-   * @return String
-   */
+ 
   public String getErrorMessage() {
     return errorMessage;
   }

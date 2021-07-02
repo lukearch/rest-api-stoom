@@ -11,76 +11,42 @@ public class GeocodeObject {
   private String placeId;
 
   @JsonProperty("address_components")
-  private List<AdressComponent> adressComponents;
+  private List<AddressComponent> addressComponents;
 
   @JsonProperty("formatted_address")
   private String formattedAddress;
 
   private GeocodeGeometry geometry;
 
-  
-  /** 
-   * @return String
-   */
   public String getPlaceId() {
     return placeId;
   }
 
-  
-  /** 
-   * @param placeId
-   */
   public void setPlaceId(String placeId) {
     this.placeId = placeId;
   }
 
-  
-  /** 
-   * @return List<AdressComponent>
-   */
-  public List<AdressComponent> getAdressComponents() {
-    return adressComponents;
+  public List<AddressComponent> getAdressComponents() {
+    return addressComponents;
   }
 
-  
-  /** 
-   * @param adressComponents
-   */
-  public void setAdressComponents(List<AdressComponent> adressComponents) {
-    this.adressComponents = adressComponents;
+  public void setAdressComponents(List<AddressComponent> adressComponents) {
+    this.addressComponents = adressComponents;
   }
 
-  
-  /** 
-   * @return String
-   */
   public String getFormattedAddress() {
     return formattedAddress;
   }
 
-  
-  /** 
-   * @param formattedAddress
-   */
   public void setFormattedAddress(String formattedAddress) {
     this.formattedAddress = formattedAddress;
   }
 
-  
-  /** 
-   * @return GeocodeGeometry
-   */
   public GeocodeGeometry getGeometry() {
     return geometry;
   }
 
-  
-  /** 
-   * @param geometry
-   */
   public void setGeometry(GeocodeGeometry geometry) {
     this.geometry = geometry;
   }
-
-  
 }

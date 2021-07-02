@@ -8,17 +8,10 @@ public class GeocodeGeometry {
   @JsonProperty("location")
   private GeocodeLocation geocodeLocation;
 
-  
-  /** 
-   * @return GeocodeLocation
-   */
   public GeocodeLocation getGeocodeLocation() {
     return geocodeLocation;
   }
-  
-  /** 
-   * @param geocodeLocation
-   */
+
   public void setGeocodeLocation(GeocodeLocation geocodeLocation) {
     this.geocodeLocation = geocodeLocation;
   }

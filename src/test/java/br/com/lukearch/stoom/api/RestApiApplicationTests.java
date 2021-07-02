@@ -6,16 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import br.com.lukearch.stoom.api.controller.EnderecoController;
+import br.com.lukearch.stoom.api.controller.AddressController;
 
 @SpringBootTest
 class RestApiApplicationTests {
 
 	@Autowired
-	EnderecoController eController;
+	AddressController addressController;
 
 	@Test
 	void contextLoads() {
-		assertThat(eController).isNotNull();
+		assertThat(addressController).isNotNull();
 	}
 }

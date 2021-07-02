@@ -1,6 +1,6 @@
 # 💻 REST API Stoom
 
-📝 REST API Stoom - é um projeto desafiador proposto pela empresa **stoom**, que consiste em criar no padrão REST, um CRUD (Create, Read, Update & Delete) de uma entidade endereço.
+📝 REST API Stoom - é um projeto desafiador proposto pela empresa **stoom**, que consiste em criar no padrão REST, um CRUD (Create, Read, Update & Delete) de uma entidade Address.
 
 ## ⚙️ Ferramentas utilizadas
 
@@ -73,16 +73,16 @@ $ docker run -p 8080:8080 lukearch/rest-api-stoom
 
 💡 Requisição **[DELETE]** remove uma entidade Endereço do banco de dados, substitua a expressão {id} pelo ID verdadeiro da entidade.
 
-**[GET]** http://localhost:8080/enderecos
+**[GET]** http://localhost:8080/address
 
 
-**[POST]** http://localhost:8080/enderecos
+**[POST]** http://localhost:8080/address
 
 
-**[PUT]** http://localhost:8080/enderecos/{id}
+**[PUT]** http://localhost:8080/address/{id}
 
 
-**[DELETE]** http://localhost:8080/enderecos/{id}
+**[DELETE]** http://localhost:8080/address/{id}
 
 ### 🎲 **Dinâmica de Testes**
 

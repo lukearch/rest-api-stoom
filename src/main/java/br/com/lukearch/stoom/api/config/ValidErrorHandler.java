@@ -18,11 +18,7 @@ public class ValidErrorHandler {
 
   @Autowired
   private MessageSource ms;
-  
-  /** 
-   * @param exception
-   * @return List<FormErrorDto>
-   */
+
   @ResponseStatus(code = HttpStatus.BAD_REQUEST)
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public List<FormErrorDto> handle(MethodArgumentNotValidException exception) {
