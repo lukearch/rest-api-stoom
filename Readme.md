@@ -24,19 +24,21 @@ No exemplo abaixo, seguem os campos mapeados pela classe **[Address.java][addres
 ```JSON
 
   {
-    "streetName": "",         //  Campo Obrigatório
-    "number": "",             //  Campo Obrigatório
-    "complement": "",         //  Campo Obrigatório
-    "neighbourhood": "",      //  Campo Obrigatório
-    "city": "",               //  Campo Obrigatório
-    "state": "",              //  Campo Obrigatório
-    "country": "",            //  Campo Obrigatório
-    "zipcode": "",            //  Campo Obrigatório
-    "latitude": "",           //     Campo Opcional
-    "longitude": ""           //     Campo Opcional
+    "streetName": "",         
+    "number": "",             
+    "complement": "",         
+    "neighbourhood": "",      
+    "city": "",              
+    "state": "",             
+    "country": "",           
+    "zipcode": "",           
+    "latitude": "",          
+    "longitude": ""          
   }
 
 ```
+
+Todos os campos são obrigatórios, exceto os de Latitude e Longitude.
 
 Caso não sejam informados os campos de Latitude e/ou Longitude, a API irá utilizar todos os outros campos obrigatórios informados para realizar uma busca através da API do Google Maps, **[Google Geocoding API][geocoding]**, e carregar automáticamente os valores de Latitude e Longitude com base no endereço.
 
