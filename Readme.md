@@ -1,21 +1,49 @@
 # 💻 REST API Stoom
 
-📝 REST API Stoom - é um projeto desafiador proposto pela empresa **stoom**, que consiste em criar no padrão REST, um CRUD (Create, Read, Update & Delete) de uma entidade Address.
+📝 REST API Stoom - é um projeto desafiador proposto pela empresa **stoom**, que consiste em criar no padrão REST, um CRUD (Create, Read, Update,  Delete) de uma entidade Address.
 
 ## ⚙️ Ferramentas utilizadas
 
 💡 Foi utilizado um banco de dados em memória, o **[h2 Database][h2]** para fins de teste da aplicação, caso planejado utilizar algun banco de dados externo, será necessária a adição da dependência do Driver do banco de dados no arquivo **[pom.xml][pom]** do projeto, e posteriormente, a configuração do arquivo **[application.yml][config]**.
 
-💡 Também foi utilizado o **[Thymeleaf][thymeleaf]**, um template enginer server-side compatível com **[Spring Boot][spring]** para criar uma mini-interface, onde é possível testar todo o projeto de forma dinâmica e interativa.
-
 - **[Java][java]**
 - **[Apache Maven][maven]**
 - **[Spring Boot][spring]**
-- **[Thymeleaf][thymeleaf]**
-- **[Vue.js][vue]**
 - **[Docker][docker]**
 - **[h2 Database][h2]**
 - **[Google Geocoding API][geocoding]**
+
+## 🚀 Como funciona
+
+ A classe **[AddressController.java][addressController]**, é responsável por mapear as URLs utilizadas no projeto.
+
+ A interface **[AddressRepository.java][addressRepository]**, é responsável por estabelecer a comunicação com o banco de dados H2 e fornecer os métodos necessários para compor o CRUD.
+
+ As classes do pacote **[br.com.lukearch.stoom.api.config][config]** são responsáveis por interceptar os erros de formulário ao enviar um **[POST]** para *http://localhost:8080/address* sem preencher todas as informações obrigatórias.
+No exemplo abaixo, seguem os campos mapeados pela classe **[Address.java][address]**:
+```JSON
+
+  {
+    "streetName": "",               Campo Obrigatório
+    "number": "",                   Campo Obrigatório
+    "complement": "",               Campo Obrigatório
+    "neighbourhood": "",            Campo Obrigatório
+    "city": "",                     Campo Obrigatório
+    "state": "",                    Campo Obrigatório
+    "country": "",                  Campo Obrigatório
+    "zipcode": "",                  Campo Obrigatório
+    "latitude": "",                    Campo Opcional
+    "longitude": ""                    Campo Opcional
+  }
+
+```
+
+Caso não sejam informados os campos de Latitude e/ou Longitude, a API irá utilizar todos os outros campos obrigatórios informados para realizar uma busca através da API do Google Maps, **[Google Geocoding API][geocoding]**, e carregar automáticamente os valores de Latitude e Longitude com base no endereço.
+
+[address]: ./src/main/java/br/com/lukearch/stoom/api/model/Address.java
+[config]: ./src/main/java/br/com/lukearch/stoom/api/config
+[addressController]: ./src/main/java/br/com/lukearch/stoom/api/controller/AddressController.java
+[addressRepository]: ./src/main/java/br/com/lukearch/stoom/api/repository/AddressRepository.java
 
 ## 💿 Como executar o projeto
 
@@ -88,6 +116,7 @@ $ docker run -p 8080:8080 lukearch/rest-api-stoom
 
 📝 Os testes unitários estão presentes em **[src/test][test]**.
 
+📝 Foram realizados testes para as classes **[AddressRepositoryTest.java][addressRepositoryTest]** e **[AddressControllerTest.java][addressControllerTest]**, com o objetivo de verificar o funcionamento do CRUD.
 
 
 
@@ -95,8 +124,9 @@ $ docker run -p 8080:8080 lukearch/rest-api-stoom
 
 
 
-
-
+[postman]: https://www.postman.com/
+[addressControllerTest]: ./src/test/java/br/com/lukearch/stoom/api/controllerTest/AddressControllerTest.java
+[addressRepositoryTest]: ./src/test/java/br/com/lukearch/stoom/api/repositoryTest/AddressRepositoryTest.java
 [java]: https://www.java.com/pt-BR/
 [maven]: https://maven.apache.org/
 [spring]: https://spring.io/
