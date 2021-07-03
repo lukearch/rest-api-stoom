@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressComponent {
+  
   @JsonProperty("long_name")
   private String longName;
 

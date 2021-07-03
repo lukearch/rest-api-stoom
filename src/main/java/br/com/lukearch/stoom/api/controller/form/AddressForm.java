@@ -8,22 +8,32 @@ import br.com.lukearch.stoom.api.model.GeocodeLocation;
 import br.com.lukearch.stoom.api.service.GeocodeService;
 
 public class AddressForm {
+
   @NotBlank
   private String streetName;
+
   @NotNull
   private Long number;
+
   @NotBlank
   private String complement;
+
   @NotBlank
   private String neighbourhood;
+
   @NotBlank
   private String city;
+
   @NotBlank
   private String state;
+
   @NotBlank
   private String country;
+  
   @NotNull
   private Long zipcode;
+
+
   private String latitude;
   private String longitude;
 
@@ -109,43 +119,62 @@ public class AddressForm {
 
   public Address convert(GeocodeService gService) {
     Address address = new Address();
-    address.setStreetName(streetName);
-    address.setNumber(number);
-    address.setComplement(complement);
-    address.setNeighbourhood(neighbourhood);
-    address.setCity(city);
-    address.setState(state);
-    address.setCountry(country);
-    address.setZipcode(zipcode);
-    address.setLatitude(latitude);
-    address.setLongitude(longitude);
+    address.setStreetName(this.streetName);
+    address.setNumber(this.number);
+    address.setComplement(this.complement);
+    address.setNeighbourhood(this.neighbourhood);
+    address.setCity(this.city);
+    address.setState(this.state);
+    address.setCountry(this.country);
+    address.setZipcode(this.zipcode);
+    address.setLatitude(this.latitude);
+    address.setLongitude(this.longitude);
     GeocodeLocation location = gService.location(address.toString());
-    if(latitude == "") {
+    if(this.latitude == "") {
       address.setLatitude(location.getLatitude());
     }
-    if(longitude == "") {
+    if(this.longitude == "") {
       address.setLongitude(location.getLongitude());
     }
     return address;
   }
 
   public Address update(Address pAddress, GeocodeService gService) {
-    Address address = pAddress;
-    address.setStreetName(streetName);
-    address.setNumber(number);
-    address.setComplement(complement);
-    address.setNeighbourhood(neighbourhood);
-    address.setCity(city);
-    address.setState(state);
-    address.setCountry(country);
-    address.setZipcode(zipcode);
-    GeocodeLocation location = gService.location(address.toString());
-    if(latitude == "" | address.getLatitude().equals(latitude)) {
-      address.setLatitude(location.getLatitude());
+    pAddress.setStreetName(this.streetName);
+    pAddress.setNumber(this.number);
+    pAddress.setComplement(this.complement);
+    pAddress.setNeighbourhood(this.neighbourhood);
+    pAddress.setCity(this.city);
+    pAddress.setState(this.state);
+    pAddress.setCountry(this.country);
+    pAddress.setZipcode(this.zipcode);
+    GeocodeLocation location = gService.location(pAddress.toString());
+    if(checkIfLatitudeIsOk(pAddress.getLatitude())) {
+      pAddress.setLatitude(this.latitude);
     }
-    if(longitude == "" | address.getLongitude().equals(longitude)) {
-      address.setLongitude(location.getLongitude());
+    if(!checkIfLatitudeIsOk(pAddress.getLatitude())) {
+      pAddress.setLatitude(location.getLatitude());
     }
-    return address;
+    if(checkIfLongitudeIsOk(pAddress.getLongitude())) {
+      pAddress.setLongitude(this.longitude);
+    }
+    if(!checkIfLongitudeIsOk(pAddress.getLongitude())) {
+      pAddress.setLongitude(location.getLongitude());
+    }
+    return pAddress;
+  }
+
+  public boolean checkIfLatitudeIsOk(String lat) {
+    if(!this.latitude.equals("") || !this.latitude.equals(lat)) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean checkIfLongitudeIsOk(String lng) {
+    if(!this.longitude.equals("") || !this.longitude.equals(lng)) {
+      return true;
+    }
+    return false;
   }
 }

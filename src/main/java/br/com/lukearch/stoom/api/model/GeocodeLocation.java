@@ -3,6 +3,7 @@ package br.com.lukearch.stoom.api.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class GeocodeLocation {
+  
   @JsonProperty("lat")
   private String latitude;
 

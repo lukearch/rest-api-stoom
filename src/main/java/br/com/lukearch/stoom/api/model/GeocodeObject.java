@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeocodeObject {
+  
   @JsonProperty("place_id")
   private String placeId;
 

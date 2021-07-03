@@ -7,9 +7,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Address {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private String streetName;
   private Long number;
   private String complement;
@@ -112,18 +114,18 @@ public class Address {
   @Override
   public String toString() {
     return
-    streetName
+    this.streetName
     + "," +
-    number
+    this.number
     + "," + 
-    complement 
+    this.complement 
     + "," + 
-    neighbourhood
+    this.neighbourhood
     + "," +
-    city
+    this.city
     + "," +
-    state
+    this.state
     + "," +
-    country;
+    this.country;
   }
 }

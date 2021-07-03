@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import br.com.lukearch.stoom.api.model.Address;
 
 public class AddressDto {
+  
   private Long id;
   private String streetName;
   private Long number;

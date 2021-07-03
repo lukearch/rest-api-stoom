@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeocodeGeometry {
+  
   @JsonProperty("location")
   private GeocodeLocation geocodeLocation;
 
