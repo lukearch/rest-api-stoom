@@ -130,10 +130,10 @@ public class AddressForm {
     address.setLatitude(this.latitude);
     address.setLongitude(this.longitude);
     GeocodeLocation location = gService.location(address.toString());
-    if(this.latitude == "") {
+    if(this.latitude.equals("")) {
       address.setLatitude(location.getLatitude());
     }
-    if(this.longitude == "") {
+    if(this.longitude.equals("")) {
       address.setLongitude(location.getLongitude());
     }
     return address;
@@ -165,16 +165,14 @@ public class AddressForm {
   }
 
   public boolean checkIfLatitudeIsOk(String lat) {
-    if(!this.latitude.equals("") || !this.latitude.equals(lat)) {
+    if(!this.latitude.equals("") || !this.latitude.equals(lat))
       return true;
-    }
     return false;
   }
 
   public boolean checkIfLongitudeIsOk(String lng) {
-    if(!this.longitude.equals("") || !this.longitude.equals(lng)) {
+    if(!this.longitude.equals("") || !this.longitude.equals(lng))
       return true;
-    }
     return false;
   }
 }
